@@ -18,13 +18,8 @@ const router = require('express').Router()
 const { ensureAuth, ensureGuest } = require('../Middleware/auth')
 
 
-router.get('/', ensureGuest ,(req, res) => {
-    res.render('login')
-  })
 
-router.get("/log",ensureAuth, async(req,res)=>{
-    res.render('index',{userinfo:req.user})
-})
+
 router.post('/post',urlencodedParser, function (req, res) {
    
   const data = new Model({
@@ -543,7 +538,7 @@ if(!user){
 
 try {
     const dataToSave = data.save();
-   res.render("sentEmail",{token:token})
+  
    
 }
 catch (error) {
@@ -862,9 +857,7 @@ fs.writeFile('./middleware/'+tbname+".js", valhtml, function (err) {
     res.end()
     });   
 });
-      router.get("/form",(req,res)=>{
-        res.render("form")
-      })
+    
       
    
       const registrationSchema= require('../middleware/validation');
@@ -899,7 +892,7 @@ new form({username:req.body.username,email:req.body.email,password:req.body.pass
               });
       router.get('/formView', urlencodedParser, async function (req, res) {
 const formView= await form.find();
-        res.render("form",{model:formView})
+      
     
       });
       router.post('/middleware', urlencodedParser, function (req, res) {
@@ -1165,18 +1158,7 @@ fs.writeFile('./Routes/index.js', req.body.savefile, err => {
 });
 
   })
-router.get("/loginuser",(req,res)=>{ 
-  res.render("LoginUser")
-})
-router.get("/register",(req,res)=>{ 
-  res.render("Register")
-})
-router.get("/datatable",(req,res)=>{ 
-  res.render("datatable")
-})
-router.get("/resetForm",(req,res)=>{ 
-  res.render("passReset")
-})
+
 const {faker} = require('@faker-js/faker');
 const user = require('../Model/user');
 
@@ -1215,16 +1197,9 @@ router.get("/seeds",(req,res)=>{
     console.error(`${err.writeErrors?.length ?? 0} errors occurred during the insertMany operation.`);
   });
 })
-router.get("/list",(req,res)=>{
-  res.render("listgroup")
-})
-router.get("/charts",async (req,res)=>{
-  
-  res.render("charts")
-})
+
 router.post('/chartvalues',urlencodedParser,async function (req, res) {
    
   const data = await charts.find();
  res.send(data)
 })
-
