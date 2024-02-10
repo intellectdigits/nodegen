@@ -24,7 +24,7 @@ require('./config/passport')(passport)
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'))
 
-app.set('view engine','ejs');
+
 
 app.use(
     session({
@@ -45,14 +45,8 @@ app.use(require("./routes/web"))
 app.use('/auth', require('./routes/auth'))
 // Set up our main routes
 
-const cat=require("./controller");
-app.get('/cat', (req, res) => {
- 
-    cat(req,res)
-    });
-    app.get('/dashboard', (req, res) => {
- res.render("welcome")
-      });
+
+
 
 
 
