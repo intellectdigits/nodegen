@@ -42,7 +42,7 @@ router.post('/post',urlencodedParser, function (req, res) {
 })
 //Get all Method
 router.get('/courses/:cat',urlencodedParser, async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
   const searchTerm = req.params.cat //variable
@@ -57,7 +57,7 @@ const regex =  new RegExp(searchTerm,'g'); // correct way
   res.end()
 })
 router.get('/AllCourses',urlencodedParser, async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
   const searchTerm = req.params.cat //variable
@@ -72,7 +72,7 @@ const regex =  new RegExp(searchTerm,'g'); // correct way
   res.end()
 })
 router.get('/resources',urlencodedParser, async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
   try{
@@ -85,7 +85,7 @@ router.get('/resources',urlencodedParser, async function (req, res) {
   res.end()
 })
 router.get('/resources/:course',urlencodedParser, async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
 const course=req.params.course;
 
@@ -99,7 +99,7 @@ const course=req.params.course;
   res.end()
 })
 router.get('/course/:id', async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   try{
       const data = await courses.findById(req.params.id);
@@ -111,7 +111,7 @@ router.get('/course/:id', async (req, res) => {
 })
 
 router.get('/search/:searchTerm', async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   const searchTerm = req.params.searchTerm //variable
 const regex =  new RegExp(searchTerm,'g'); // correct way
@@ -124,7 +124,7 @@ const regex =  new RegExp(searchTerm,'g'); // correct way
   }
 })
 router.get('/carts/:user', async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   const user=req.params.user;
   try{
@@ -136,7 +136,7 @@ router.get('/carts/:user', async (req, res) => {
   }
 })
 router.get('/learning/:user', async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   const user=req.params.user;
   try{
@@ -166,7 +166,7 @@ router.patch('/update/:id', async (req, res) => {
 })
 router.post('/DelCourse', async (req, res) => {
   console.log("request sent")
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   try {
       const {id} = req.body;
@@ -180,7 +180,7 @@ router.post('/DelCourse', async (req, res) => {
 
 router.post('/DelRes', async (req, res) => {
   console.log("request sent")
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   try {
       const {id} = req.body;
@@ -193,7 +193,7 @@ router.post('/DelRes', async (req, res) => {
 })
 router.post('/CreateSub', async (req, res) => {
   console.log("request sent")
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   const data = req.body.formData;
   data.forEach(obj => {
@@ -218,7 +218,7 @@ res.send("yes")
 })
 router.post('/DelCart', async (req, res) => {
   console.log("request sent")
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   try {
       const {id} = req.body;
@@ -232,7 +232,7 @@ router.post('/DelCart', async (req, res) => {
 })
 router.post('/DelLeraning', async (req, res) => {
   console.log("request sent")
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   try {
       const {id} = req.body;
@@ -250,7 +250,7 @@ router.delete('/delete/:id', (req, res) => {
   res.send('Delete by ID API')
 })
 router.post("/subscription", urlencodedParser,async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   // Our register logic starts here
    try {
@@ -321,7 +321,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 router.post("/addCourse",upload.single('file'),async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   // Our register logic starts here
    try {
@@ -368,7 +368,7 @@ const Res_storage = multer.diskStorage({
 
 const Res_upload = multer({ storage: Res_storage })
 router.post("/addRes",Res_upload.single('file'),async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   // Our register logic starts here
    try {
@@ -400,7 +400,7 @@ console.log(req.body)
   // Our register logic ends here
 });
 router.post("/addCart", urlencodedParser,async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   // Our register logic starts here
    try {
@@ -430,7 +430,7 @@ console.log(req.body)
   // Our register logic ends here
 });
 router.post("/register", urlencodedParser,async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   // Our register logic starts here
    try {
@@ -483,7 +483,7 @@ console.log(req.body)
 });
 
 router.post("/login",  urlencodedParser,async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://edukis.onrender.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   // Our login logic starts here
    try {
